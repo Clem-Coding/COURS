@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Commun */
+body {
+  margin: 16px;
+  background-color: pink;
+}
+
+.box {
+    border: 2px solid orange;
+    background-color: wheat;
+    width: 25%;
+}
+
+.flex {
+
+  display: flex;
+  flex-direction: row;
+  gap:100px;
+  height: 100vh;
+  
+   
+}

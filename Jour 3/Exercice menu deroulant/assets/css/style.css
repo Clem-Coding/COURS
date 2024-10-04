@@ -15,10 +15,10 @@ body {
 
 
 
- /* Ici on affiche le header en vert flashy, sa position est fixe car en tant que header il ne bougera pas pendant la navigtion sur la page
+ /* Ici on affiche le header en vert, sa position est fixe car en tant que header il ne bougera pas pendant la navigtion sur la page
  Sa taille est réglée à 100% soit 100% de son parent le body afin d'occuper largeur de la page
  
- A revoir demain, peut être stylyser la navbar plutôt*/
+ A revoir demain, peut être stylyser la navbar plutôt?*/
 
 .header {
   background-color: #acff2f;
@@ -43,7 +43,7 @@ body {
   display: inline-block;
   background-color:#008001 ;
   padding: 1em;
-  position: relative;
+  position: relative; /*Pourquoi relative déjà?*/
   
 }
 
@@ -53,19 +53,15 @@ body {
   background-color: #33ce34; 
 }
 
-/* On sélectionne les items du sous-menu et on leur applique un changement de couleur au survol*/
-.submenu li:hover {
-  background-color: #33ce34; 
-}
 
 
-
-/*On sélectionne la liste sous-menu, on la fixe en absolu par rapport à son parent le menu principal, on régle le top à 100% pour la décaler de 100% de la taille du parent*/
+/*On sélectionne la liste sous-menu, on la fixe en absolu par rapport à son parent le menu principal, on régle le top à 100% pour la décaler de 100% de la taille du parent;
+pareil pour la width*/
 .submenu {
 display: none;
 position: absolute;
 top: 100%;
-left: 0;
+left:0;   /*  pourquoi si je ne mets pas le left à zéro, ça se décale?*/
 width: 100%;
 
 }
@@ -86,7 +82,7 @@ padding: 1em;
 
 }
 
-/* On applique un changement de couleur au survol des sous-menus*/ 
+/* On applique un changement de couleur au survol des items sous-menus*/ 
 .submenu li:hover {
   background-color: #00ff00;;
 }
