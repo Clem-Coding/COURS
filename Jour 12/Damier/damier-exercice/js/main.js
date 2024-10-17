@@ -52,9 +52,10 @@ let damierButton = document.querySelector('.js-damier')
 let discoButton = document.querySelector('.js-disco')
 let labyrinthButton = document.querySelector('.js-labyrinth')
 let cells = document.querySelectorAll(".js-cell")
+let bobbyImg = document.getElementById("bobby")
+let catImg = document.getElementById("cat")
 
-let row1 = document.querySelectorAll('.js-row1')
-console.log("row1", row1)
+
 
 
 
@@ -70,12 +71,47 @@ console.log("toutes les cellules", cells)
 
 // Les fonctions (appelées par les Event Listener) sont déclarées ici.
 
+
+//__________________________ Tools _____________________________________________
+
+
+// fonction pour récupéer les "coordonnées" des colonnes et des lignes
+function getRowCol(index) {
+  return {
+    row: Math.floor(index / 8),
+    col: index % 8
+  };
+}
+
+
+
+function clearCheckboard() {
+  console.log("test fonction CLEAR checkboard");
+
+  cells.forEach(function (cell) {
+    const classesToRemove = [
+      "disco-color1",
+      "disco-color2",
+      "disco-color3",
+      "disco-color4",
+      "disco-color5",
+      "black"
+    ];
+    classesToRemove.forEach((className) => {
+      cell.classList.remove(className);
+    });
+  });
+}
+
+
+
+//_________________PREMIER EXO : Damier floor___________________________________
+
 function createCheckboard() {
   console.log("test fonction CREATE Checkboard");
 
   for (let i = 0; i < cells.length; i++) {
-    let row = Math.floor(i / 8)
-    let col = i % 8; // 
+    const { row, col } = getRowCol(i); // récupération des coordonnées avec getRowCol()
 
     if (row % 2 === 0 && col % 2 === 0) { // si les lignes et colonnes sont paires
       cells[i].classList.add("black");
@@ -89,31 +125,213 @@ function createCheckboard() {
 }
 
 
+//_________________DEUXIEME EXO : Disco floor___________________________________
+
 function createRandomizeColors() {
-  const classes = ['disco-color1', 'disco-color2', 'disco-color3', 'disco-color4', 'disco-color5']
- 
-  // cells.classList.remove(randomizeClasses)
+  
+  
+  
+// Tableau des classes  
+  const classes = [
+    "disco-color1",
+    "disco-color2",
+    "disco-color3",
+    "disco-color4",
+    "disco-color5"
+  ];
+
+
 
   cells.forEach((cell) => {
-    
-    let randomizeClasses = classes[Math.floor(Math.random() * classes.length)]
-    console.log(randomizeClasses)
-    cell.classList.add(randomizeClasses)
-  })
+    let randomizeClasses = classes[Math.floor(Math.random() * classes.length)];
+    console.log(randomizeClasses);
+    cell.classList.add(randomizeClasses);
+  });
 }
 
 
-function clearCheckboard() {
-  console.log("test fonction CLEAR checkboard");
+
+
+//_________________TROISIEME EXO : Labyrinthe floor_____________________________
+
+function createLabyrinth() {
+  console.log("Création du labyrinthe");
   
-  cells.forEach(function(cell) {
+ 
+  for (let i = 0; i < cells.length; i++) {
+    const { row, col } = getRowCol(i); // récupération des coordonnées
 
-  const classesToRemove = ['disco-color1', 'disco-color2', 'disco-color3', 'disco-color4', 'disco-color5', 'black'];
-    classesToRemove.forEach(className => {
-      cell.classList.remove(className);
-    });
-  })
+
+    const key = `${row},${col}` // clé et "gabarit" pour le switch
+
+    switch (key) {
+
+      case `${row},0`: // toute la colonne 0
+      case `${row},7`: // toute la colonne 7
+      case `7,${col}`: // toute la ligne 7
+        cells[i].classList.add("black");
+        break;
+
+      case `0,${col}`: // ligne 0, indifféremment les colonnes
+        if (col !== 1) { // Exclut la colonne 1
+          cells[i].classList.add("black");
+        }
+        break;
+
+      case `${row},5`: // indifféramment toutes les lignes, colonne 5
+        if (row !== 6) { // Exclut la ligne 6
+          cells[i].classList.add("black");
+        }
+        break;
+
+
+      case `1,3`: // juste la cellule en ligne 1 et colonne 3
+        cells[i].classList.add("black");
+        break;
+
+
+      case `3,${col}`: //ligne 3, colonnes de 1 à 3
+        if (col >= 1 && col <= 3) {
+          cells[i].classList.add("black");
+        }
+        break;
+
+
+      case `5,${col}`: // ligne 5, colonnes de 1 à 3
+        if (col >= 2 && col <= 4) {
+          cells[i].classList.add("black");
+        }
+        break;
+
+
+    }
+  }
 }
+
+
+//____________QUATRIEME EXO : Push Pull Boom au click___________________________
+
+
+function makePush() {
+  const cell = this;
+  cell.classList.add("push");
+}
+
+function makePull() {
+  const cell = this;
+  cell.classList.remove("push")
+  cell.classList.add("pull");
+
+}
+
+
+function makeBoom() {
+  const cell = this;
+  cell.classList.add("boom");
+
+}
+
+
+
+//_________________CINQUIEME EXO  : faire déplacer Bobby________________________
+
+let positionX = 0;
+let positionY = 0;
+
+function bobbyMove(event) {
+  let key = event.key;
+  console.log(key);
+  
+  if (
+    key === "ArrowDown" ||
+    key === "ArrowUp" ||
+    key === "ArrowLeft" ||
+    key === "ArrowRight"
+  ) {
+    bobbyImg.classList.add("visible");
+}
+
+
+  switch (key) {
+    case "ArrowRight":
+      positionX += 3;
+      bobbyImg.style.left = positionX + "rem";
+      break;
+
+    case "ArrowLeft":
+      positionX -= 3; //
+      bobbyImg.style.left = positionX + "rem";
+      break;
+
+    case "ArrowDown":
+      positionY += 3;
+      bobbyImg.style.top = positionY + "rem";
+      break;
+
+    case "ArrowUp":
+      positionY -= 3;
+      bobbyImg.style.top = positionY + "rem";
+      break;
+
+  }
+}
+
+
+
+//_________________SIXIEME EXO : Le chat qui avance random______________________
+
+
+
+let cellSize = 3;  // en rem
+let currentIndex = 0
+
+
+function moveCatRandom() {
+  
+  const { row, col } = getRowCol(currentIndex); // récupère les coordonnées des lignes/colonnes
+  
+  
+  let directions = ["up", "down", "left", "right"];
+  let randomDirection = directions[Math.floor(Math.random() * directions.length)];
+
+  switch (randomDirection) {
+    case 'left':
+      if (col > 0) { // Vérifie qu'on n'est pas dans la première colonne
+        currentIndex -= 1; // On peut le déplacer d'une case vers la gauche ( //Si colonne 0 ou moins, auncun mouvement)
+      }                   
+      break;
+
+    case 'right':
+      if (col < 7) { // Vérifie qu'on n'est pas dans la dernière colonne
+        currentIndex += 1; // On peut le déplacer d'une case vers la droite
+      }
+      break;
+
+    case 'up':
+      if (row > 0) { // Vérifie qu'on n'est pas dans la première ligne
+        currentIndex -= 8; ; // On l'envoie sur la ligne d'avant en le bougeant de 8 cases.
+      }
+      break;
+
+    case 'down':
+      if (row < 7) { // Vérifie qu'on n'est pas dans la dernière ligne
+        currentIndex += 8; // On l'envoie sur la ligne d'après en le bougeant de 8 cases.
+      }
+      break;
+  }
+
+  // On récupère les nouvelles positions du chat ici
+  const position = getRowCol(currentIndex);
+  console.log (position)
+
+  // Appliquer les nouvelles positions au chat
+  catImg.style.top = position.row * cellSize + "rem";
+  catImg.style.left = position.col * cellSize + "rem";
+
+  return currentIndex; // Retourne la nouvelle position de l'index
+}
+
+
 
 /************************************************************/
 /*                      Event listeners                       */
@@ -130,15 +348,32 @@ function onDancefloorClick() {
   console.log("je teste la fonction DanceFloor")
   clearCheckboard();
   createRandomizeColors()
-  
+
 }
 
 
 function onLabyrinthClick() {
   console.log("je teste la fonction labyrinthe")
   clearCheckboard();
-  
+  createLabyrinth()
+
 }
+
+
+function pushPullBoom() {
+  cells.forEach(cell => {
+    cell.addEventListener("mousedown", makePush);
+    cell.addEventListener("mouseup", makePull);
+    cell.addEventListener("dblclick", makeBoom)
+  });
+}
+
+
+
+
+
+
+
 
 /**************************************************************/
 /*                       Main Program                         */
@@ -186,6 +421,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // 4. Lorsque l'utilisateur enfonce le bouton de la souris sur une case (classe "js-cell"),
+
+  pushPullBoom()
+
+
+
   // Afficher "push" sur fond jaune (utiliser la classe "push")
   // Puis, lorsqu'il relâche le bouton, 
   // afficher "pull" sur fond orange (utiliser la classe "pull")
@@ -196,12 +436,17 @@ document.addEventListener('DOMContentLoaded', () => {
   // 5. Lorsque l'utilisateur appuie sur une des 4 flèches du clavier,
   // Afficher bobby et le déplacer sur le grille (de case en case)
 
+  document.addEventListener('keydown', bobbyMove)
+
   // TIP : Ajouter la classe visible sur la div ayant l'id "bobby"
   // Le déplacer de case en case
   // dans la direction de la flèche appuyée
 
 
   // 6. Chaque seconde, un chat se déplace aléatoirement sur les cases du plateau
+
+
+setInterval(moveCatRandom, 1000);
 
   // TIP : Ajouter un timer qui déplace la div ayant l'id "cat" d'une case
   // dans une direction aléatoire toutes les secondes
