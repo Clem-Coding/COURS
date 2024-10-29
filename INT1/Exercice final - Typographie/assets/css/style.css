@@ -1,0 +1,146 @@
+/*******************************************************************
+ *                          GENERAL                           *
+ *******************************************************************/
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 16px;
+  max-width: 420px;
+  line-height: 1.5;
+  margin: auto;
+  padding: 0;
+  font-family: "Cardo";
+  text-align: justify;
+}
+
+/*******************************************************************
+ *                          TOOLS                        *
+ *******************************************************************/
+
+@font-face {
+  font-family: "Cardo";
+  src: url("../fonts/cardo/cardo-regular.woff") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cardo";
+  src: url("../fonts/cardo-bold.woff") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Special Elite";
+  src: url("../fonts/specialelite/SpecialElite.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.line-section {
+  border: none;
+  border-top: 2px solid black;
+}
+
+.italic-text {
+  font-style: italic;
+}
+
+.dotted-underline {
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  text-underline-offset: 0.4em;
+}
+
+/*******************************************************************
+ *                          HEADER                          *
+ *******************************************************************/
+header {
+  text-align: center;
+}
+
+h1 {
+  font-size: 4em;
+  font-family: "Special Elite";
+  text-transform: uppercase;
+  line-height: 2;
+}
+
+/*******************************************************************
+ *                          MAIN                                  *
+ *******************************************************************/
+
+h2 {
+  font-size: 2.5em;
+  font-family: "Special Elite";
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-align: start;
+}
+
+h3 {
+  font-size: 1.5em;
+  font-family: "Special Elite";
+  line-height: 1;
+}
+
+blockquote p:first-of-type {
+  font-style: italic;
+  text-align: start;
+}
+
+blockquote p:nth-of-type(2) {
+  text-align: center;
+}
+
+blockquote p:first-of-type::before {
+  content: "« ";
+}
+
+blockquote p:first-of-type::after {
+  content: " »";
+}
+
+article p::first-letter {
+  font-size: 2em;
+  font-family: "Special Elite";
+  line-height: 80%;
+  float: left;
+  padding-right: 0.5em;
+  padding-bottom: 0.2em;
+}
+
+.dash-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.dash-list h3::before {
+  content: "❧ ";
+}
+
+/*******************************************************************
+ *                          FOOTER                                 *
+ *******************************************************************/
+
+.source-link a {
+  text-decoration-style: dashed;
+  text-underline-offset: 0.4em;
+}
+
+.source-link a:visited {
+  color: inherit;
+}
+
+.end-ornaments {
+  text-align: center;
+  font-size: 3em;
+}

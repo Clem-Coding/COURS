@@ -1,0 +1,60 @@
+.lorem-first-words {
+    color: green;
+}
+
+.p-important {
+    font-weight: bold;
+}
+
+.p-emphase {
+    font-style: italic;
+}
+
+.p-urgent {
+    text-decoration: underline;
+}
+
+.p-miseenavant {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.p-text {
+    font-family: serif;
+}
+
+.p-text-sans-serif {
+    font-family: sans-serif;
+}
+
+.p-text-cursive {
+    font-family: cursive;
+}
+
+.p-text-monospace {
+    font-family: monospace;
+}
+
+.p-text-times {
+    font-family: Times New Roman, serif;
+}
+
+.highlight {
+    background-color: green;
+}
+
+.p-text-left {
+    text-align: left;
+}
+
+.p-text-center {
+    text-align: center;
+}
+
+.p-text-right {
+    text-align: right;
+}
+
+.p-text-justify {
+    text-align: justify;
+}

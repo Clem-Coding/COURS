@@ -1,0 +1,30 @@
+/* Ce code pourra être ajouté à la feuille de style commune */
+/* .code {
+	font-family: Monaco, monospace;
+	font-size: 14px;
+	color: #000;
+	background-color: #fff;
+} */
+
+q {
+  font-style: italic;
+  quotes: "😊" "😊"; /* préciser quelle quote on met au début et à la fin de la citation, préférable de le faire car chaque navigateur ne se comporte pas da la même manière */
+}
+
+blockquote {
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+blockquote p::before {
+  content: "🐱 ";
+}
+
+blockquote p::after {
+  content: " 🐌";
+}
+
+blockquote cite {
+  font-style: normal;
+  color: deepskyblue;
+}

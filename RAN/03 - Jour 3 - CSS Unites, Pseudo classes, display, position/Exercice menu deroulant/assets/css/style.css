@@ -1,0 +1,91 @@
+/*********************** TOOLS ************************/
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* Passer de 16px à 10px pour la facilité du calcul*/
+}
+
+body {
+  font-size: 16px; /* On remet à 16px qui est la valeur par défaut */
+  margin: 0;
+}
+
+
+
+ /* Ici on affiche le header en vert, sa position est fixe car en tant que header il ne bougera pas pendant la navigtion sur la page
+ Sa taille est réglée à 100% soit 100% de son parent le body afin d'occuper largeur de la page
+ 
+ A revoir demain, peut être stylyser la navbar plutôt?*/
+
+.header {
+  background-color: #acff2f;
+  position: fixed;
+  width: 100%;
+}
+
+
+
+/* ici on sélectionne toutes les listes de la navbar (menus et sous menus), on leur enlève les puces, couleur blanche et on les aligne au centre dans la navbar*/
+.nav-bar ul {
+  list-style-type: none;
+  padding: 0; /*pourquo? */
+  margin: 0;/* pourquoi? */
+  color: white;
+  text-align: center;
+}
+
+
+/*On sélectionne les items menus principaux en les disposant en ligne, en leur rajoutant une bordure et un padding*/
+.dropdown-menu {
+  display: inline-block;
+  background-color:#008001 ;
+  padding: 1em;
+  position: relative; /*Pourquoi relative déjà?*/
+  
+}
+
+
+/* On sélectionn les menus principaux et on leur applique un changement de couleur au survol*/
+.dropdown-menu:hover {
+  background-color: #33ce34; 
+}
+
+
+
+/*On sélectionne la liste sous-menu, on la fixe en absolu par rapport à son parent le menu principal, on régle le top à 100% pour la décaler de 100% de la taille du parent;
+pareil pour la width*/
+.submenu {
+display: none;
+position: absolute;
+top: 100%;
+left:0;   /*  pourquoi si je ne mets pas le left à zéro, ça se décale?*/
+width: 100%;
+
+}
+
+
+ 
+/* Au survol du menu principal, on applique les 2 propriétés suivantes au sous-menu*/ 
+.dropdown-menu:hover .submenu {
+display: block; /* L'affiche en block*/ 
+background-color: #33ce34;
+}
+
+
+/* On applique un padding aux items des sous-menus comme pour les menus princpaux*/ 
+.submenu li {
+padding: 1em;
+
+
+}
+
+/* On applique un changement de couleur au survol des items sous-menus*/ 
+.submenu li:hover {
+  background-color: #00ff00;;
+}
+
+
+

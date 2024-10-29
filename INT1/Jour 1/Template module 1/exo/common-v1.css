@@ -1,0 +1,51 @@
+/* GENERALITES */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #eee;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #dd5735;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #333333;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: #616771;
+}
+
+a {
+  color: #dd5735;
+  text-decoration: none;
+}
+
+/* LAYOUT */
+
+/* L'entête de la page */
+
+.header,
+.footer {
+  border: 1px solid #dd5735;
+  background-color: #dddddd;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* Le pied de page */
+
+/* VARIOUS */
+
+.parent {
+  border: 1px dashed #dd5735;
+}

@@ -1,0 +1,30 @@
+/* _____________ GENERALITES__________________ */
+
+body {
+  line-height: 1.5;
+}
+
+article {
+  text-align: justify;
+}
+
+/* _____________ MAIN LAYOUT__________________ */
+
+.container {
+  width: 960px;
+  margin: auto;
+}
+
+/* _____________ IMG / FLOAT__________________ */
+
+.img-left {
+  float: left;
+}
+
+.clear {
+  clear: both;
+}
+
+.img-right {
+  float: right;
+}

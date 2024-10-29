@@ -1,0 +1,137 @@
+/*********************** TOOLS ************************/
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* Passer de 16px à 10px */
+}
+
+body {
+  font-size: 16px; /* On remet à 16px qui est la valeur par défaut */
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6; /* espacement entre les lignes */
+}
+ 
+
+/*********************** HEADER ***********************/
+.header {
+ 
+  background-color: #d3d3d3;
+  color: white;
+  text-align: center;
+  height: 3.5em;
+  width: 100%;
+  position: fixed;
+  top:0;
+  z-index: 100; /* valeur plus élevée que le reste du contenu, important possible bugs */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Espace entre les éléments */
+  
+
+}
+
+.right-buttons {
+   margin-left: auto;
+   width: 15em;
+   display: flex; 
+   justify-content: space-around;  /* met de l'espace entre et autou */
+   
+   
+}
+
+.nav-button img {
+  
+  width: 2em;
+  height: 2em;
+}
+
+
+
+.menu-button img {
+  width: 2em;
+  height: 2em;
+}
+
+.date {
+  color: black;
+  width: 5em;
+  height: 2em;
+}
+
+
+
+
+
+/*********************** CONTENT ***********************/
+
+.popup {
+  
+  background-color: #008000;
+  width : 10em;
+  height : 4em;
+  color: white;
+  float: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /*Assure que la popup est au-dessus des autres éléments, mais n'a d'effet que sur les éléments positionnés. Donc bien préciser position */
+  position : absolute; /* en absolu par rapport à son parent le main (qui est en relative) */
+  right: 0; /* aligne la popup à droite */
+}
+
+
+
+
+.container {
+    display: flex; 
+    margin-top: 3.5em;
+    margin-bottom:3.5em;
+    
+}
+
+.sidebar {
+    flex: 1; /* prend 1 part de l'espace disponible dans son contenant  */
+    background-color: #efefef
+}
+
+.sidebar ul {
+  list-style-type:none;
+  text-align: center;
+  margin:0; /* enlever le margin par défaut des listes */
+  padding:0; /* enlever le margin par défaut des listes */
+}
+
+.sidebar li {
+ padding: 1em;
+}
+
+.sidebar li:hover {
+ cursor: pointer;
+ background-color: grey;
+}
+
+
+main {
+    flex: 4;   
+    background-color: #f4f4f4;
+    padding: 2em;
+    position: relative; 
+}
+
+
+
+/*********************** FOOTER ***********************/
+.footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  height: 3.5em;
+  bottom:0;
+  z-index: 100; /* valeur plus élevée que le reste du contenu, important possible bugs */
+}
