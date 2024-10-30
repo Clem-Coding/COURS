@@ -1,0 +1,245 @@
+/*******************************************************************
+ *                          GENERAL                                *
+ *******************************************************************/
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.menu ul li,
+button,
+h1,
+h2,
+h3 {
+  font-family: "Economica", sans-serif;
+}
+
+/* section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+} */
+
+a{
+  color:#fff;
+}
+
+a:visited {
+  color:#fff;
+}
+article {
+  display: flex;
+  gap: 2em; /* espace entre la photo du prof et la description */
+}
+
+button {
+  font-size: 2rem;
+  text-transform: uppercase;
+  background-color: #7e4a7c;
+  padding: 0.5em 1em;
+  color: #ffffff;
+}
+
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+/*******************************************************************
+ *                          TOOLS                                  *
+ *******************************************************************/
+html {
+  font-size: 62.5%;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Economica";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/economica/v15/Qw3fZQZaHCLgIWa29ZBbNsIB.woff2)
+    format("woff2");
+}
+
+/*******************************************************************
+ *                          HEADER                          *
+ *******************************************************************/
+
+.header {
+  text-align: center;
+}
+
+.menu ul {
+  display: flex;
+  justify-content: space-around;
+  background-color: #7e4a7c;
+  color: #ffffff;
+  padding: 1em;
+  text-transform: uppercase;
+  
+  font-weight: 800;
+  font-size: 2.4rem;
+}
+
+/*******************************************************************
+ *                          MAIN                                   *
+ *******************************************************************/
+h1 {
+  text-align: center;
+  font-size: 5rem;
+  color: #7e4a7c;
+}
+
+h2 {
+  font-size: 4rem;
+  color: #b878b5;
+ 
+}
+
+h3 {
+  font-size: 3rem;
+  color: #7e4a7c;
+  margin-top: 0;
+}
+
+.teacher-grid-section {
+  display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 2em; /
+}
+
+.about-section {
+  display: flex;
+  gap: 3em;
+  
+}
+.about-section article {
+  flex: 2.6; /* Le prmier article prend 2.6 parts de l'espace dispo */
+  
+}
+
+.about-section article:last-child {
+   flex: 1; /*le 2ème article prend 1 part de l'espace dispo */
+}
+
+.about-section p:first-of-type {
+  margin-top: 0;
+}
+
+.why-section {
+  width: 100%;
+}
+.why-section article {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.why-section ul li {
+  background-image: url("../images/puce-fleche.png");
+  background-repeat: no-repeat;
+  background-position: 0 50%; 
+  padding-left: 2em;
+  margin-bottom: 1em;
+
+}
+
+/*******************************************************************
+ *                          TABLE SECTION                          *
+ *******************************************************************/
+
+.planning-table {
+  border-collapse: collapse;
+}
+.planning-table td,.planning-table th {
+  border: 2px solid #dec2dd;
+  padding: 0.8em 5em;
+}
+
+.planning-table thead {
+  background-color: #7e4a7c;
+  color:#ffffff;
+}
+
+.planning-table td:first-of-type {
+  font-weight: 600;
+}
+
+
+
+/*******************************************************************
+ *                          FORM SECTION                          *
+ *******************************************************************/
+
+.section-part {
+  display: flex;
+  justify-content: space-between;
+  background-color: #feeefe;
+  padding: 2em;
+  width: 100%;
+}
+
+.field label {
+  width: 30%;
+}
+
+
+fieldset {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  justify-content: center;
+  padding: 1em;
+  border: 1px solid #7e4a7c;
+ 
+}
+
+
+/*******************************************************************
+ *                          FOOTER                                 *
+ *******************************************************************/
+ aside {
+  display: flex;
+  justify-content: center;
+  padding: 2em;
+  background-color: #7e4a7c;
+ }
+
+.footer {
+  padding: 2em;
+  text-align: center;
+  background-color: #444;
+  color: #fff;
+}
+
+.fa-brands {
+  font-size: 3rem;
+  color:#ffffff;
+}

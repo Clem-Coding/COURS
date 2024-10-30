@@ -1,0 +1,23 @@
+a {
+  background-color: black;
+  color: #fff;
+  padding: 1em;
+}
+
+.visited:visited {
+  background-color: violet;
+}
+
+.survol:hover {
+  background-color: red;
+}
+
+.active:active {
+  background-color: blue;
+}
+
+.clavier:focus {
+  background-color: #ff0000;
+  outline: 1px solid;
+  outline-color: #ff0000;
+}
