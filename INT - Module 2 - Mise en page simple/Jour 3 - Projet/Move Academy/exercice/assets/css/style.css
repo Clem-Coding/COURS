@@ -37,12 +37,12 @@ h3 {
   justify-content: space-between;
 } */
 
-a{
-  color:#fff;
+a {
+  color: #fff;
 }
 
 a:visited {
-  color:#fff;
+  color: #fff;
 }
 article {
   display: flex;
@@ -55,13 +55,17 @@ button {
   background-color: #7e4a7c;
   padding: 0.5em 1em;
   color: #ffffff;
+  cursor: pointer;
 }
-
 
 ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
+}
+
+em {
+  color: #7e4a7c;
 }
 /*******************************************************************
  *                          TOOLS                                  *
@@ -100,11 +104,22 @@ html {
   justify-content: space-around;
   background-color: #7e4a7c;
   color: #ffffff;
-  padding: 1em;
+  padding: 0.2em;
   text-transform: uppercase;
-  
+
   font-weight: 800;
   font-size: 2.4rem;
+}
+
+.menu ul li {
+  padding: 0.2em 1em;
+  cursor: pointer;
+}
+
+.menu ul li:hover {
+  background-color: #ffffff;
+  color: #7e4a7c;
+  cursor: pointer;
 }
 
 /*******************************************************************
@@ -119,7 +134,6 @@ h1 {
 h2 {
   font-size: 4rem;
   color: #b878b5;
- 
 }
 
 h3 {
@@ -128,24 +142,18 @@ h3 {
   margin-top: 0;
 }
 
-.teacher-grid-section {
-  display: grid; 
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 2em; /
-}
+/*____________1rst SECTION "About the School" ___________________*/
 
 .about-section {
   display: flex;
   gap: 3em;
-  
 }
 .about-section article {
   flex: 2.6; /* Le prmier article prend 2.6 parts de l'espace dispo */
-  
 }
 
 .about-section article:last-child {
-   flex: 1; /*le 2ème article prend 1 part de l'espace dispo */
+  flex: 1; /*le 2ème article prend 1 part de l'espace dispo */
 }
 
 .about-section p:first-of-type {
@@ -158,44 +166,62 @@ h3 {
 .why-section article {
   display: flex;
   flex-direction: column;
-  
 }
 
 .why-section ul li {
   background-image: url("../images/puce-fleche.png");
   background-repeat: no-repeat;
-  background-position: 0 50%; 
+  background-position: 0 50%;
   padding-left: 2em;
   margin-bottom: 1em;
-
 }
 
-/*******************************************************************
- *                          TABLE SECTION                          *
- *******************************************************************/
+/*__________________2nd SECTION "Teachers" _______________________*/
+
+.teacher-grid-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2em;
+}
+
+/*__________________3rd SECTION "Planning TABLE _______________________*/
 
 .planning-table {
   border-collapse: collapse;
 }
-.planning-table td,.planning-table th {
+.planning-table td,
+.planning-table th {
   border: 2px solid #dec2dd;
-  padding: 0.8em 5em;
+  padding: 1em 3em;
+  text-align: center;
 }
 
 .planning-table thead {
   background-color: #7e4a7c;
-  color:#ffffff;
+  color: #ffffff;
 }
 
 .planning-table td:first-of-type {
   font-weight: 600;
 }
 
+tr:nth-child(1) td:nth-child(5) {
+  background-color: #fdedfd;
+}
 
+tr:nth-child(2) td:nth-child(3) {
+  background-color: #fdedfd;
+}
 
-/*******************************************************************
- *                          FORM SECTION                          *
- *******************************************************************/
+tr:nth-child(4) td:nth-child(2) {
+  background-color: #fdedfd;
+}
+
+tr:nth-child(5) td:nth-child(4) {
+  background-color: #fdedfd;
+}
+
+/*__________________4th SECTION Booking FORM_______________________*/
 
 .section-part {
   display: flex;
@@ -209,28 +235,40 @@ h3 {
   width: 30%;
 }
 
-
 fieldset {
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1em;
   justify-content: center;
   padding: 1em;
   border: 1px solid #7e4a7c;
- 
 }
 
+select {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: 0.5em 10em 0.5em 0.5em;
+  margin-left: 1em;
+}
+
+input {
+  border: 1px solid #ccc;
+  background-color: #fff;
+
+  padding: 0.5em 10em;
+  margin-left: 1em;
+}
 
 /*******************************************************************
  *                          FOOTER                                 *
  *******************************************************************/
- aside {
+aside {
   display: flex;
   justify-content: center;
   padding: 2em;
   background-color: #7e4a7c;
- }
+}
 
 .footer {
   padding: 2em;
@@ -241,5 +279,5 @@ fieldset {
 
 .fa-brands {
   font-size: 3rem;
-  color:#ffffff;
+  color: #ffffff;
 }
