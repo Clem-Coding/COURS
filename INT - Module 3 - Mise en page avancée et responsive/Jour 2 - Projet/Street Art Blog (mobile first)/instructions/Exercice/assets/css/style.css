@@ -1,0 +1,325 @@
+/*******************************************************************
+ *                          GENERAL                                *
+ *******************************************************************/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+.menu,
+blockquote p {
+  font-family: "Mali", cursive;
+}
+
+button,
+input {
+  font-family: "Montserrat", sans-serif;
+}
+
+/*******************************************************************
+ *                        TOOLS                            *
+ *******************************************************************/
+
+html {
+  font-size: 62.5%;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  src: url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2)
+    format("woff2");
+}
+
+@font-face {
+  font-family: "Mali";
+  font-style: normal;
+  font-weight: 600;
+  src: url(https://fonts.gstatic.com/s/mali/v10/N0bV2SRONuN4QPLgGlNQJA.woff2)
+    format("woff2");
+}
+
+.blue-txt {
+  color: #037d9d;
+}
+
+.pink-txt {
+  color: #db0059;
+}
+
+.italic-txt {
+  font-style: italic;
+  font-size: 1.4rem;
+  margin-top: 0;
+}
+/*******************************************************************
+ *                        HEADER                                   *
+ *******************************************************************/
+.header {
+  border: 1px solid black;
+  text-align: center;
+}
+
+.menu {
+  font-size: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu ul {
+  margin: 0;
+  padding: 0;
+}
+
+.menu ul li {
+  list-style-type: none;
+}
+
+.menu ul li a {
+  display: block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  color: inherit;
+}
+
+.menu ul li a:hover {
+  background-color: #ededed;
+  border-bottom: 3px solid #037d9d;
+  border-left: 3px solid #037d9d;
+}
+/*******************************************************************
+ *                        MAIN                                     *
+ *******************************************************************/
+
+.content {
+  padding: 2em;
+}
+.banner-home {
+  background: url(../images/banner1.jpg) no-repeat center center;
+  background-size: cover;
+  padding: 10rem 0em;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  padding: 2em;
+  background-color: #ededed;
+  color: #db0059;
+  display: inline-block;
+}
+
+h2 {
+  font-size: 2.8rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.actus-section h2::before {
+  display: block;
+  content: url("../images/calendar.svg");
+  width: 1em;
+  margin: auto;
+}
+
+.interviews-section h2::before {
+  display: block;
+  content: url("../images/microphone.svg");
+  width: 1em;
+  margin: auto;
+}
+
+blockquote {
+  background-color: #ededed;
+  border-bottom: 3px solid #037d9d;
+  border-left: 3px solid #037d9d;
+  text-align: center;
+  padding: 2em;
+}
+
+blockquote p {
+  font-style: italic;
+  font-size: 2.5rem;
+}
+blockquote cite {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+article {
+  background-color: #ededed;
+  padding: 1em;
+  margin-bottom: 2em;
+}
+
+article img {
+  width: 100%;
+  height: auto;
+}
+
+article p {
+  width: 100%;
+}
+
+.article-btn {
+  background-color: #1d1e3d;
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+  margin: 0 0 0 auto;
+  width: fit-content;
+  margin-top: auto;
+}
+/* *****************************************************************
+                   ASIDE
+***************************************************************** */
+.aside {
+  background-color: #db0059;
+  color: #ffff;
+  border: 1px solid black;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  padding: 2em;
+}
+
+/* form Newslettter */
+
+form {
+  border-bottom: 3px solid #fff;
+  border-left: 3px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1em;
+}
+
+fieldset {
+  border: none;
+}
+
+form label {
+  display: block;
+  margin-bottom: 1em;
+}
+
+form input {
+  border: none;
+  padding: 1em;
+}
+
+form input[type="email"] {
+  background-color: #f2d1de;
+  margin-bottom: 2rem;
+  color: #db0059;
+  width: 80%;
+}
+
+form input[type="submit"] {
+  border: none;
+  background-color: #fff;
+  color: #db0059;
+}
+
+/* social networks */
+
+.social-networks-section {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+}
+
+.fa-brands {
+  color: #fff;
+  font-size: 3rem;
+}
+
+/* *****************************************************************
+                   FOOTER
+***************************************************************** */
+
+.footer {
+  padding: 2em;
+  text-align: center;
+  color: #fff;
+  background-color: #444;
+}
+
+.footer a:visited {
+  color: #ee403a;
+}
+
+.fa-brands {
+  font-size: 3rem;
+  color: #fff;
+}
+
+/* *****************************************************************
+ VERSION TABLETTE
+***************************************************************** */
+
+/* *****************************************************************
+ VERSION DESKTOP
+***************************************************************** */
+
+@media screen and (min-width: 980px) {
+  .container {
+    max-width: 1100px;
+    margin: auto;
+  }
+
+  /* .container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 2em;
+  } */
+
+  blockquote {
+    margin: 3rem 10rem;
+  }
+
+  .articles-container {
+    display: flex;
+  }
+
+  article {
+    flex: 1;
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .article-btn {
+    margin-top: auto;
+  }
+
+  .aside {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 5em 15em;
+  }
+
+  /* .form-section,
+  .social-section {
+    margin: 5em;
+  } */
+}

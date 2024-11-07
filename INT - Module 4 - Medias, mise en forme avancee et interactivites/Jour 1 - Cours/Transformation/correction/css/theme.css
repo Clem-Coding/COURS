@@ -1,0 +1,61 @@
+.fleche {
+  transform: rotate(95deg);
+  transition: transform all 0.6s;
+}
+
+.fleche:hover {
+  transform: rotate(0deg);
+}
+
+/* *****************************************************************
+GENERALITIES
+***************************************************************** */
+
+.center {
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* *****************************************************************
+ TRANSFORM
+***************************************************************** */
+
+.projet {
+  position: relative;
+  margin: 0 auto;
+  padding: 15px;
+  text-align: center;
+  border: 10px solid #dd5735;
+  /* border-radius: 50%; */
+}
+
+/* .projet a {
+  display: block;
+  text-decoration: none;
+  color: #dd5735;
+}
+
+.projet img {
+  vertical-align: top;
+  transition: all 0.5s;
+}
+
+.projet img {
+  transform: scale(0.6);
+}
+
+.projet figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.projet:hover figcaption {
+  opacity: 1;
+  transform: scale(2) translateY(-0.7em);
+} */
