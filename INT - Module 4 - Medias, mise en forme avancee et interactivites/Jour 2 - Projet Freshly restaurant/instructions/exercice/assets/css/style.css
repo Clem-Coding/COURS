@@ -1,0 +1,179 @@
+/* *****************************************************************
+GENERAL
+***************************************************************** */
+body * {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.8rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+img {
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+h1::before,
+h2::before,
+h3::before,
+h4::before,
+h1::after,
+h2::after,
+h3::after,
+h4::after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f005";
+  margin: 0 0.5rem;
+  color: #950000;
+  font-size: 1rem;
+  vertical-align: middle;
+}
+/* *****************************************************************
+HEADER
+***************************************************************** */
+header .container {
+  background-color: pink;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header .logo {
+  height: auto;
+  display: block;
+  width: 8em;
+}
+
+/* *****************************************************************
+MAIN
+***************************************************************** */
+main .container {
+  padding: 2em;
+}
+.slideshow-section {
+  background-color: aquamarine;
+  border: 1px solid black;
+}
+
+.slider img {
+  width: 100%;
+}
+
+.intro-section {
+  background-color: aquamarine;
+  border: 1px solid black;
+}
+
+.intro-section img {
+  width: 100%;
+}
+
+.menus-section {
+  background-color: aquamarine;
+  border: 1px solid black;
+}
+
+article {
+  background-color: #ebe3db;
+}
+
+article button {
+  width: 100%;
+  padding: 1em;
+  background-color: #4c4343;
+  color: #fff;
+}
+
+/* *****************************************************************
+FOOTER
+***************************************************************** */
+footer {
+  background-color: pink;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* *****************************************************************
+DESKTOP
+***************************************************************** */
+
+@media screen and (min-width: 1100px) {
+  .container {
+    max-width: 1400px;
+    margin: auto;
+  }
+  header .container {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  main .container {
+    padding: 0;
+  }
+
+  .menu ul {
+    display: flex;
+  }
+
+  .intro-section-containers {
+    display: flex;
+  }
+
+  .paragraphs {
+    order: 1;
+    background-color: chartreuse;
+  }
+
+  .articles-container {
+    display: flex;
+  }
+
+  footer {
+    flex-direction: row;
+  }
+}
+
+/* *****************************************************************
+TABLETTE
+***************************************************************** */
+
+@media screen and (min-width: 780px) {
+  .menu ul {
+    display: flex;
+  }
+
+  footer {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20em;
+  }
+}
