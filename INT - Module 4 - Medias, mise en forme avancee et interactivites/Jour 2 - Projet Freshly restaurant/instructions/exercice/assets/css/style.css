@@ -13,6 +13,7 @@ body {
   font-size: 1.8rem;
   margin: 0;
   line-height: 1.5;
+  font-family: "Athiti", sans-serif;
 }
 
 img {
@@ -30,6 +31,7 @@ button {
   color: inherit;
   cursor: pointer;
   text-align: center;
+  font-family: inherit;
 }
 
 h1,
@@ -38,18 +40,17 @@ h3,
 h4,
 h5 {
   margin: 0;
-  padding: 0;
+  padding: 1em;
   text-align: center;
+  font-family: "Merienda", cursive;
 }
 
 h1::before,
 h2::before,
 h3::before,
-h4::before,
 h1::after,
 h2::after,
-h3::after,
-h4::after {
+h3::after {
   font-family: "Font Awesome 5 Free";
   content: "\f005";
   margin: 0 0.5rem;
@@ -57,6 +58,25 @@ h4::after {
   font-size: 1rem;
   vertical-align: middle;
 }
+
+@font-face {
+  font-family: "Athiti";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/athiti/v12/pe0sMISdLIZIv1wA-DFCBfe_.woff2)
+    format("woff2");
+}
+
+@font-face {
+  font-family: "Merienda";
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/merienda/v19/gNMHW3x8Qoy5_mf8uWMFMIo.woff2)
+    format("woff2");
+}
+
 /* *****************************************************************
 HEADER
 ***************************************************************** */
@@ -73,12 +93,44 @@ header .container {
   width: 8em;
 }
 
+.menu {
+  width: 100%;
+  text-align: center;
+}
+
+.menu ul li {
+  background-color: #ebe3db;
+  color: #000;
+  border-bottom: 1px solid black;
+  padding: 0.5em 1em;
+  cursor: pointer;
+}
+
+.menu ul li:hover {
+  background-color: #4c4343;
+  color: #fff;
+}
+
 /* *****************************************************************
 MAIN
 ***************************************************************** */
+
+h1 {
+  font-size: 3rem;
+}
+
 main .container {
   padding: 2em;
 }
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
 .slideshow-section {
   background-color: aquamarine;
   border: 1px solid black;
@@ -104,6 +156,24 @@ main .container {
 
 article {
   background-color: #ebe3db;
+  margin-bottom: 1em;
+}
+
+article li:before {
+  content: "\f005";
+  font-family: FontAwesome;
+  font-size: 0.8rem;
+  margin: 1em;
+  vertical-align: middle;
+  color: #950000;
+}
+
+article ul {
+  padding: 1em;
+}
+
+.button-container {
+  padding: 1em;
 }
 
 article button {
@@ -113,17 +183,46 @@ article button {
   color: #fff;
 }
 
+/* A revoir ci après!! */
+article button#text::before {
+  content: "";
+  background-image: url("../img/fork-knife.svg");
+  display: block;
+  height: 2em;
+  width: 2em;
+  /* background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center; */
+}
+
 /* *****************************************************************
 FOOTER
 ***************************************************************** */
 footer {
-  background-color: pink;
+  background-image: url("../img/footer-bg.jpg");
+  color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 2em;
+}
+
+footer p {
+  margin: 0;
+  text-align: center;
+}
+
+footer div {
+  width: 100%;
+}
+
+h4 {
+  font-size: 1.8rem;
+  border-bottom: 2px dotted #fff;
+  padding: 1em;
 }
 /* *****************************************************************
-DESKTOP
+VERSION DESKTOP
 ***************************************************************** */
 
 @media screen and (min-width: 1100px) {
@@ -131,17 +230,32 @@ DESKTOP
     max-width: 1400px;
     margin: auto;
   }
+
   header .container {
     flex-direction: row;
     width: 100%;
+    justify-content: space-between;
+    padding: 2em 1em;
   }
 
-  main .container {
+  h1 {
+    flex-shrink: 0;
     padding: 0;
   }
 
   .menu ul {
     display: flex;
+    justify-content: flex-end;
+  }
+
+  .menu ul li {
+    margin: 1em;
+    border: none;
+    padding: 0.5 1em;
+  }
+
+  main .container {
+    padding: 0;
   }
 
   .intro-section-containers {
@@ -155,6 +269,7 @@ DESKTOP
 
   .articles-container {
     display: flex;
+    gap: 1em;
   }
 
   footer {
@@ -163,7 +278,7 @@ DESKTOP
 }
 
 /* *****************************************************************
-TABLETTE
+VERSION TABLETTE
 ***************************************************************** */
 
 @media screen and (min-width: 780px) {

@@ -1,0 +1,139 @@
+/*********************************************************************/
+/*                           WIREFRAMING                             */
+/*********************************************************************/
+* {
+  box-sizing: border-box;
+}
+
+body * {
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0.5em 1em;
+}
+
+menu {
+  margin: 0;
+  padding: 0;
+}
+img {
+  width: 100%;
+}
+
+header,
+footer {
+  text-align: center;
+}
+header img,
+footer img {
+  width: 18em;
+}
+
+/* _____HEADER_____  */
+
+.banner {
+  padding: 2em;
+}
+
+.banner .page-container {
+  padding: 1em;
+}
+
+h1 {
+  text-align: center;
+}
+.main-navbar menu {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.sticked-navbar {
+  display: none;
+}
+
+/* _____MAIN_____  */
+
+/* _____footer_____  */
+
+footer a img {
+  width: 2em;
+}
+
+/*********************************************************************/
+/*              VERSION  DESKTOP                                */
+/*********************************************************************/
+
+@media screen and (min-width: 1200px) {
+  .page-container {
+    max-width: 1200px;
+    margin: auto;
+  }
+  .container-flex-cols {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .container-flex-cols section {
+    margin: 1em;
+  }
+
+  header .page-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .main-navbar menu {
+    justify-content: center;
+  }
+
+  .banner {
+    padding: 2em 20em;
+  }
+
+  .container-cols-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  footer .page-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .container-flex-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+}
+
+/*********************************************************************/
+/*              VERSION  Tablette                            */
+/*********************************************************************/
+
+@media screen and (min-width: 780px) {
+  .banner {
+    padding: 2em 5em;
+  }
+
+  .container-cols-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  /* .container-flex-cols {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  } */
+
+  .container-flex-cols section:nth-child(3) {
+    flex: 1 1 100%; /* Prend 100% de la largeur sur la nouvelle ligne */
+  }
+}
