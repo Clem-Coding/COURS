@@ -26,21 +26,23 @@ ul {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 button {
   border: none;
-  color: inherit;
   cursor: pointer;
   text-align: center;
   font-family: inherit;
+  font-size: inherit;
 }
 
 h1,
 h2,
 h3,
-h4,
-h5 {
-  margin: 0;
-  padding: 1em;
+h4 {
   text-align: center;
   font-family: "Merienda", cursive;
 }
@@ -81,7 +83,7 @@ h3::after {
 HEADER
 ***************************************************************** */
 header .container {
-  background-color: pink;
+  /* background-color: pink; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -91,6 +93,7 @@ header .container {
   height: auto;
   display: block;
   width: 8em;
+  margin-top: 1em;
 }
 
 .menu {
@@ -104,6 +107,10 @@ header .container {
   border-bottom: 1px solid black;
   padding: 0.5em 1em;
   cursor: pointer;
+}
+
+.menu ul {
+  border-top: 1px solid black;
 }
 
 .menu ul li:hover {
@@ -132,8 +139,8 @@ h3 {
 }
 
 .slideshow-section {
-  background-color: aquamarine;
-  border: 1px solid black;
+  /* background-color: aquamarine; */
+  /* border: 1px solid black; */
 }
 
 .slider img {
@@ -141,18 +148,18 @@ h3 {
 }
 
 .intro-section {
-  background-color: aquamarine;
-  border: 1px solid black;
+  /* background-color: aquamarine; */
+  /* border: 1px solid black; */
 }
 
 .intro-section img {
   width: 100%;
 }
 
-.menus-section {
-  background-color: aquamarine;
+/* .menus-section {
+ background-color: aquamarine; 
   border: 1px solid black;
-}
+} */
 
 article {
   background-color: #ebe3db;
@@ -172,27 +179,30 @@ article ul {
   padding: 1em;
 }
 
-.button-container {
+article .button-container {
   padding: 1em;
 }
 
 article button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  padding: 1em;
+  padding: 0.5em;
   background-color: #4c4343;
   color: #fff;
+  box-shadow: 2px 2px 2px silver;
 }
 
-/* A revoir ci après!! */
-article button#text::before {
-  content: "";
-  background-image: url("../img/fork-knife.svg");
-  display: block;
-  height: 2em;
+article button::before {
+  content: url("../img/fork-knife.svg");
   width: 2em;
-  /* background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center; */
+  height: 2em;
+  margin-right: 0.2em;
+}
+
+article button:hover {
+  background-color: #5d5555;
 }
 
 /* *****************************************************************
@@ -201,10 +211,20 @@ FOOTER
 footer {
   background-image: url("../img/footer-bg.jpg");
   color: #fff;
+  padding: 2em;
+}
+
+footer .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2em;
+}
+
+h4 {
+  font-size: 1.8rem;
+  border-bottom: 2px dotted #fff;
+  padding-bottom: 0.5em;
+  margin-bottom: 0;
 }
 
 footer p {
@@ -212,15 +232,97 @@ footer p {
   text-align: center;
 }
 
+footer p:first-of-type {
+  margin-top: 0.5em;
+}
+
 footer div {
   width: 100%;
 }
 
-h4 {
-  font-size: 1.8rem;
-  border-bottom: 2px dotted #fff;
-  padding: 1em;
+/*_______ Social networks______ */
+.pictos {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 0.5em;
 }
+.pictos a::before {
+  font-family: "FontAwesome";
+  font-weight: 600;
+  color: white;
+  font-size: 3rem;
+}
+
+.facebook::before {
+  content: "\f09a";
+}
+
+.instagram::before {
+  content: "\f16d";
+}
+
+.pinterest::before {
+  content: "\f0d2";
+}
+
+/* *****************************************************************
+LICENSE
+***************************************************************** */
+
+.license {
+  padding: 2em;
+  text-align: center;
+  color: #fff;
+  font-size: 1.4rem;
+  background-color: #444;
+}
+
+.license img {
+  width: 65px;
+  height: auto;
+}
+
+.license a {
+  text-decoration: underline;
+  color: white;
+}
+
+/* *****************************************************************
+VERSION TABLETTE
+***************************************************************** */
+
+@media screen and (min-width: 780px) {
+  .menu ul {
+    display: flex;
+    background-color: #ebe3db;
+    justify-content: space-around;
+  }
+
+  .menu ul li {
+    border: none;
+  }
+
+  .menu ul :first-child {
+    border-top: none;
+  }
+  .menu ul li:hover {
+    background-color: #4c4343;
+  }
+
+  /* footer {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20em;
+  } */
+
+  footer .container {
+    flex-direction: row;
+    gap: 4em;
+    align-items: start;
+  }
+}
+
 /* *****************************************************************
 VERSION DESKTOP
 ***************************************************************** */
@@ -238,33 +340,47 @@ VERSION DESKTOP
     padding: 2em 1em;
   }
 
+  .header .logo {
+    margin-top: 0;
+  }
+
   h1 {
     flex-shrink: 0;
-    padding: 0;
   }
 
   .menu ul {
     display: flex;
     justify-content: flex-end;
+    background-color: inherit;
   }
 
   .menu ul li {
     margin: 1em;
-    border: none;
+    /* border: none; */
     padding: 0.5 1em;
   }
 
   main .container {
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
   }
 
-  .intro-section-containers {
+  .intro-section-container {
     display: flex;
+    flex-direction: row-reverse;
+    gap: 1em;
+  }
+
+  .intro-section-container img {
+    width: 100%;
+    flex: 1;
   }
 
   .paragraphs {
-    order: 1;
-    background-color: chartreuse;
+    flex: 1.5;
+    /* background-color: chartreuse; */
   }
 
   .articles-container {
@@ -272,27 +388,9 @@ VERSION DESKTOP
     gap: 1em;
   }
 
-  footer {
+  footer .container {
     flex-direction: row;
+    gap: 4em;
+    align-items: start;
   }
 }
-
-/* *****************************************************************
-VERSION TABLETTE
-***************************************************************** */
-
-@media screen and (min-width: 780px) {
-  .menu ul {
-    display: flex;
-  }
-
-  footer {
-    flex-direction: row;
-    justify-content: center;
-    gap: 20em;
-  }
-}
-
-/* pour le test Github desktop
-test à nouveau
- */
