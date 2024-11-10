@@ -1,6 +1,30 @@
 /* *****************************************************************
+FONTS
+***************************************************************** */
+
+@font-face {
+  font-family: "Athiti";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/athiti/v12/pe0sMISdLIZIv1wA-DFCBfe_.woff2)
+    format("woff2");
+}
+
+@font-face {
+  font-family: "Merienda";
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/merienda/v19/gNMHW3x8Qoy5_mf8uWMFMIo.woff2)
+    format("woff2");
+}
+
+/* *****************************************************************
 GENERAL
 ***************************************************************** */
+
+/* General styles_______________________________________________  */
 body * {
   box-sizing: border-box;
 }
@@ -20,6 +44,8 @@ img {
   width: 100%;
 }
 
+/* Content styles_______________________________________________  */
+
 ul {
   list-style: none;
   padding: 0;
@@ -37,6 +63,7 @@ button {
   text-align: center;
   font-family: inherit;
   font-size: inherit;
+  padding: 0.3em 1.2em;
 }
 
 h1,
@@ -46,6 +73,8 @@ h4 {
   text-align: center;
   font-family: "Merienda", cursive;
 }
+
+/* Icon styles_______________________________________________  */
 
 h1::before,
 h2::before,
@@ -61,22 +90,10 @@ h3::after {
   vertical-align: middle;
 }
 
-@font-face {
-  font-family: "Athiti";
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/athiti/v12/pe0sMISdLIZIv1wA-DFCBfe_.woff2)
-    format("woff2");
-}
+/* Utility classes_______________________________________________  */
 
-@font-face {
-  font-family: "Merienda";
-  font-style: normal;
-  font-weight: 300 900;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/merienda/v19/gNMHW3x8Qoy5_mf8uWMFMIo.woff2)
-    format("woff2");
+.centered-txt {
+  text-align: center;
 }
 
 /* *****************************************************************
@@ -138,6 +155,10 @@ h3 {
   font-size: 2rem;
 }
 
+/* *****************************************************************
+   1. STYLES SPECIFIC TO THE "HOME" PAGE
+***************************************************************** */
+
 .slideshow-section {
   /* background-color: aquamarine; */
   /* border: 1px solid black; */
@@ -188,7 +209,6 @@ article button {
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 0.5em;
   background-color: #4c4343;
   color: #fff;
   box-shadow: 2px 2px 2px silver;
@@ -203,6 +223,48 @@ article button::before {
 
 article button:hover {
   background-color: #5d5555;
+}
+
+/* *****************************************************************
+   2. STYLES SPECIFIC TO THE "MENU" PAGE
+***************************************************************** */
+
+.menu-gallery {
+  background-color: #ebe3db;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: center;
+  padding: 2em 0.5em;
+}
+
+.menu-gallery img {
+  position: relative;
+}
+
+.menu-gallery img:not(:last-child) {
+  margin-bottom: 1.5em;
+}
+
+.menus-details .button-container {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+.menus-details button {
+  background-color: #ebe3db;
+  color: #000;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+.menus-details button:hover {
+  background-color: #950000;
+  color: #fff;
+  transition: background-color 0.5s ease;
+}
+
+.menus-details .button-container {
+  margin: 2em 2em;
 }
 
 /* *****************************************************************
@@ -289,14 +351,17 @@ LICENSE
 }
 
 /* *****************************************************************
-VERSION TABLETTE
+MEDIA QUERIES
 ***************************************************************** */
+
+/* VERSION TABLETTE_______________________________________________*/
 
 @media screen and (min-width: 780px) {
   .menu ul {
     display: flex;
     background-color: #ebe3db;
     justify-content: space-around;
+    border: none;
   }
 
   .menu ul li {
@@ -321,11 +386,13 @@ VERSION TABLETTE
     gap: 4em;
     align-items: start;
   }
+
+  .menu-gallery img {
+    width: calc(33% - 1em);
+  }
 }
 
-/* *****************************************************************
-VERSION DESKTOP
-***************************************************************** */
+/* DESKTOP VERSION__________________________________________*/
 
 @media screen and (min-width: 1100px) {
   .container {
