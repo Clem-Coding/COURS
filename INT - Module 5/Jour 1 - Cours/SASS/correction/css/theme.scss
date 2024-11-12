@@ -1,0 +1,64 @@
+/* 
+  sass --watch theme.scss theme.css
+  
+  sass <fichiers source .scss> <fichier destination .css>
+  compile le fichier <fichiers source .scss> pour générer le css et l'écrire dans le fichier <file destination .css>
+  
+  --watch <file> : détecte automatiquement les changements dans le fichier <file>
+  
+*/
+
+// test commentaire
+
+@import "variables.scss";
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+  background-color: pink;
+}
+
+.avatar {
+  @include square(200px);
+}
+
+// Utilisation des variables
+
+.main {
+  color: $base;
+}
+
+.main h1 {
+  color: $title-1;
+}
+
+// Imbrication
+.imbrication {
+  h2 {
+    color: $title-2;
+  }
+
+  section {
+    padding: 1em;
+    border: 1px solid $title-3;
+
+    h3 {
+      color: $title-3;
+    }
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.row > * {
+  margin-left: 1%;
+  margin-bottom: 1%;
+}
+
+@for $i from 2 to 7 {
+  .cols-#{$i} > * {
+    width: calc(100% / $i - 1%);
+  }
+}
