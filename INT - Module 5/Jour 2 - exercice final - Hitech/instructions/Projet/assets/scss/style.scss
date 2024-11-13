@@ -1,0 +1,288 @@
+/* *****************************************************************
+1. VARIABLES
+***************************************************************** */
+
+/* Couleurs */
+$color-bg-page: #eee;
+$color-bg-element: #eee;
+$color-bg-header: #0c6588;
+$color-bg-menu: #e2f7ff;
+$color-bg-main: #fff;
+$color-bg-footer: #333;
+$color-title: #333;
+$color-text: #555;
+$color-text-header: #e2f7ff;
+$color-text-footer: #ddd;
+$color-link: #0c6588;
+$color-link-hover: #000;
+
+/* Typographie */
+$font-default: "Open Sans", serif;
+$font-title: "Raleway", sans-serif;
+$font-size-default: 1.5rem;
+$font-size-title1: 3.6rem;
+$font-size-title2: 2.4rem;
+$font-size-title3: 1.8rem;
+$line-height: 1.5;
+
+/* Bordures */
+$border-sm: 1px solid #eee;
+$border-md: 1px solid #ddd;
+$border-lg: 2px solid #ccc;
+
+/* Ombres */
+$shadow-sm: 0 0 1px rgba(0, 0, 0, 0.2);
+$shadow-md: 0 0 3px rgba(0, 0, 0, 0.3);
+$shadow-lg: 0 0 5px rgba(0, 0, 0, 0.4);
+$shadow-xl: 0 10px 20px rgba(0, 0, 0, 0.5);
+
+// 2. Mixin / Functions
+// @mixin flex-center {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+/* *****************************************************************
+2. RESET
+***************************************************************** */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; // 62.5% de 16px = 10px, donc 1rem = 10px
+}
+
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* *****************************************************************
+3.GENERAL
+***************************************************************** */
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  src: url(https://fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-muw.woff2)
+    format("woff2");
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/raleway/v34/1Ptsg8zYS_SKggPNyCg4TYFq.woff2)
+    format("woff2");
+}
+
+body {
+  font-family: $font-default;
+  line-height: $line-height;
+  font-size: $font-size-default;
+  background-color: $color-bg-page;
+}
+
+/* *****************************************************************
+4. GLOBAL SECTIONS
+***************************************************************** */
+/*_____________HEADER__________ */
+
+.header {
+  background-image: url("../images/header.jpg");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header__title,
+.header__subtitle {
+  text-align: center;
+}
+
+.header__nav-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+/*_____________MAIN__________ */
+
+.container {
+  background-color: $color-bg-main;
+}
+
+.main .container section {
+  padding: 0 2rem;
+}
+
+.main__nav-list {
+  background-color: $color-bg-menu;
+  text-align: center;
+  padding: 1em;
+}
+
+.breadcrumb {
+  display: none;
+}
+
+.main__nav {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+.main__nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+.main__nav-link {
+  text-decoration: none;
+}
+
+.main__nav--second {
+  display: none;
+}
+
+.product__navigation-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.product__description-item-content {
+  display: flex;
+  flex-direction: column;
+
+  .product__description-item-image {
+    width: 100%;
+    height: auto;
+    border: $border-sm;
+    padding: 4em 2em;
+  }
+}
+
+/*_____________FOOTER__________ */
+.footer {
+  background-image: url("../images/footer.jpg");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $color-text-footer;
+}
+
+.footer__category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer__category-title {
+  text-align: center;
+  font-size: $font-size-title2;
+}
+
+.footer__list {
+  text-align: center;
+}
+
+.footer__category-image {
+  width: 20em;
+}
+
+/* *****************************************************************
+5. Media Queries
+***************************************************************** */
+
+/*_____________Version tablette__________ */
+
+@media screen and (min-width: 480px) {
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .main__nav {
+    margin: 0;
+    padding: 0;
+    margin-left: calc(-50vw + 50%);
+
+    .main__nav-list {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 2em;
+
+      li {
+        flex-basis: calc(50% - 1em);
+      }
+    }
+
+    .main__nav-link {
+      flex: 0 0 50%;
+    }
+  }
+
+  .product__navigation-list {
+    flex-direction: row;
+    gap: 2em;
+  }
+}
+
+.main__nav--second {
+  display: block;
+}
+
+/*_____________Version Desktop__________ */
+
+@media screen and (min-width: 960px) {
+  .container {
+    max-width: 1140px;
+    margin: auto;
+  }
+
+  .main__nav {
+    width: 100%;
+    margin: 0;
+  }
+
+  .main__nav-list {
+    flex-wrap: nowrap !important;
+  }
+
+  .product__description-item-content {
+    flex-direction: row;
+  }
+
+  .product__description-item:nth-of-type(1) .product__description-item-image {
+    order: 2;
+  }
+
+  .product__description-item:nth-of-type(3) .product__description-item-image {
+    order: 2;
+  }
+
+  .footer {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    &__category {
+      flex: 0 0 50%;
+    }
+  }
+}

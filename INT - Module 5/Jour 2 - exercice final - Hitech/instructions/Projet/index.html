@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hitech</title>
+    <link rel="stylesheet" href="./assets/scss/style.css" />
+  </head>
+  <body>
+    <div class="accessibility-bar desktop-only">
+      <p>
+        Options d'affichage / Accessibilité: Thème : Sombre Contrasté Clair |
+        Interlignage : Simple Augmenté
+      </p>
+    </div>
+    <!-- Header -->
+    <header class="header">
+      <div class="header__container">
+        <div class="header__logo">
+          <img
+            src="./assets/images/logo.svg"
+            alt="Logo de l'entreprise Hightech en forme de triangle orange"
+          />
+        </div>
+
+        <h1 class="header__title">HiTech.NET</h1>
+        <p class="header__subtitle">Tout le matériel High-Tech</p>
+      </div>
+
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-item">
+            <a href="#" class="header__nav-link">Mon compte</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="#" class="header__nav-link">Mon Panier</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        <nav class="main__nav">
+          <ul class="main__nav-list">
+            <li><a href="#" class="main__nav-link">Ordinateurs</a></li>
+            <li>
+              <a href="#" class="main__nav-link">Périphériques & composants</a>
+            </li>
+            <li><a href="#" class="main__nav-link">Téléphones</a></li>
+            <li><a href="#" class="main__nav-link">Objets connectés</a></li>
+          </ul>
+        </nav>
+
+        <!-- Fil d'Ariane -->
+        <nav class="breadcrumb">
+          <ul class="breadcrumb__list">
+            <li><a href="#" class="breadcrumb__link">Accueil</a></li>
+            <li>
+              <a href="#" class="breadcrumb__link"
+                >Périphériques & Composants</a
+              >
+            </li>
+            <li>
+              <a href="#" class="breadcrumb__link">Ecrans d'ordinateur</a>
+            </li>
+            <li><span class="breadcrumb__current">AOC 24B1XHS</span></li>
+          </ul>
+        </nav>
+
+        <!-- section into détails du produit -->
+        <section class="product__details">
+          <h2 class="product__title">AOC 24B1XHS</h2>
+
+          <nav class="product__navigation">
+            <ul class="product__navigation-list">
+              <li>
+                <a href="#presentation" class="product__navigation-link"
+                  >Présentation</a
+                >
+              </li>
+              <li>
+                <a href="#descriptif" class="product__navigation-link"
+                  >Descriptif</a
+                >
+              </li>
+              <li>
+                <a href="#caracteristiques" class="product__navigation-link"
+                  >Caractéristiques techniques</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </section>
+
+        <!-- section presentation du produit -->
+        <section class="product__presentation">
+          <h2 class="product__presentation-title">Présentation</h2>
+          <p class="product__presentation-description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
+            distinctio, dolor animi quia debitis ab optio ipsum voluptatibus
+            unde eius molestias nostrum, iure autem magnam, temporibus deleniti
+            consequatur neque culpa.
+          </p>
+        </section>
+
+        <!-- section déscriptif du produit -->
+        <section class="product__description">
+          <h2 class="product__description-title">Descriptif</h2>
+
+          <article class="product__description-item">
+            <h3 class="product__description-item-title">
+              Un moniteur Full HD performant et tout en finesse
+            </h3>
+
+            <div class="product__description-item-content">
+              <img
+                src="./assets/images/graph.png"
+                alt="Graphique représentant un écran d'ordinateur et ses spécifités de taille"
+                class="product__description-item-image"
+              />
+
+              <p class="product__description-item-text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Voluptates ab porro optio recusandae dolorem magnam, aliquam ad
+                quas blanditiis quod in. Rem soluta, illum delectus doloribus
+                blanditiis praesentium quidem perspiciatis!
+              </p>
+            </div>
+          </article>
+
+          <article class="product__description-item">
+            <h3 class="product__description-item-title">
+              Appréciez le design sans contour
+            </h3>
+            <div class="product__description-item-content">
+              <img
+                src="./assets/images/slider/desc-1.jpg"
+                alt="Des écrans d'ordinateurs colorés"
+                class="product__description-item-image"
+              />
+
+              <p class="product__description-item-text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Voluptates ab porro optio recusandae dolorem magnam, aliquam ad
+                quas blanditiis quod in. Rem soluta, illum delectus doloribus
+                blanditiis praesentium quidem perspiciatis!
+              </p>
+            </div>
+          </article>
+
+          <article class="product__description-item">
+            <h3 class="product__description-item-title">
+              Tout le confort nécessaire
+            </h3>
+            <div class="product__description-item-content">
+              <img
+                src="./assets/images/slider/desc-2.jpg"
+                alt="Des écrans d'ordinateurs colorés"
+                class="product__description-item-image"
+              />
+
+              <p class="product__description-item-text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Voluptates ab porro optio recusandae dolorem magnam, aliquam ad
+                quas blanditiis quod in. Rem soluta, illum delectus doloribus
+                blanditiis praesentium quidem perspiciatis!
+              </p>
+            </div>
+          </article>
+        </section>
+
+        <!-- Section caractéristiques du produit -->
+        <section class="product__features">
+          <h2 class="product__features-title">Caractéristiques techniques</h2>
+
+          <!-- Les tableaux seront ajoutés ici plus tard -->
+        </section>
+
+        <nav class="main__nav main__nav--second">
+          <ul class="main__nav-list">
+            <li><a href="#" class="main__nav-link">Ordinateurs</a></li>
+            <li>
+              <a href="#" class="main__nav-link">Périphériques & composants</a>
+            </li>
+            <li><a href="#" class="main__nav-link">Téléphones</a></li>
+            <li><a href="#" class="main__nav-link">Objets connectés</a></li>
+          </ul>
+        </nav>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer__category">
+        <h3 class="footer__category-title">Moyens de paiements</h3>
+        <img
+          src="./assets/images/payment.png"
+          alt="Logos des différents moyens de paiment"
+          class="footer__category-image"
+        />
+      </div>
+
+      <div class="footer__category">
+        <h3 class="footer__category-title">Sur les réseaux sociaux</h3>
+        <ul class="footer__list">
+          <li class="footer__list-item">Facebook</li>
+          <li class="footer__list-item">Instagram</li>
+          <li class="footer__list-item">Twitter</li>
+          <li class="footer__list-item">LinkedIn</li>
+        </ul>
+      </div>
+
+      <div class="footer__category">
+        <h3 class="footer__category-title">A propos</h3>
+        <ul class="footer__list">
+          <li class="footer__list-item">
+            <a href="#" class="footer__link">Qui sommes nous</a>
+          </li>
+          <li class="footer__list-item">
+            <a href="#" class="footer__link">Nos services</a>
+          </li>
+          <li class="footer__list-item">
+            <a href="#" class="footer__link">Contactez-nous</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer__category">
+        <h3 class="footer__category-title">Infos pratiques</h3>
+        <ul class="footer__list">
+          <li class="footer__list-item">
+            <a href="#" class="footer__link">Plan du site</a>
+          </li>
+          <li class="footer__list-item">
+            <a href="#" class="footer__link">Foire aux questions</a>
+          </li>
+          <li class="footer__list-item">
+            <a href="#" class="footer__link">Conditions générales de vente</a>
+          </li>
+          <li class="footer__list-item">
+            <a href="#" class="footer__link">Informations légales</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer__license">
+        <p class="footer__license-text">
+          Ce matériel pédagogique est la propriété de la 3w Academy. Cet
+          exercice a été réalisé par Stéphane Pereck
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
