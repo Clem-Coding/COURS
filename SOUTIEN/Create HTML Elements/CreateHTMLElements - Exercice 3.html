@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello</title>
+    <style></style>
+  </head>
+  <body>
+    <script type="text/javascript">
+      const listDOM = document.createElement("ul");
+      const fruits = ["kiwi", "banane", "fruit de la passion", "framboise"];
+
+      fruits.forEach((fruit) => {
+        const listItem = document.createElement("li");
+        listItem.innerText = fruit;
+        listDOM.appendChild(listItem);
+      });
+
+      document.body.appendChild(listDOM);
+    </script>
+  </body>
+</html>

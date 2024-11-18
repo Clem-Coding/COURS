@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello</title>
+    <style></style>
+  </head>
+  <body>
+    <input type="text" name="search" class="js-search" />
+    <button class="js-button">Ajouter</button>
+    <ul class="js-list"></ul>
+
+    <script type="text/javascript">
+      const listDOM = document.querySelector(".js-list");
+      document.querySelector(".js-button").addEventListener("click", () => {
+        const inputText = document.querySelector(".js-search");
+        const listItem = document.createElement("li");
+        listItem.innerText = inputText.value;
+        listDOM.appendChild(listItem);
+        inputText.value = "";
+      });
+    </script>
+  </body>
+</html>
