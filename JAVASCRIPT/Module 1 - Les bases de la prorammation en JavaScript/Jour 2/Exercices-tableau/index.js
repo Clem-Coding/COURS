@@ -86,32 +86,54 @@ for (let i = 0; i < numbersExo5.length; i++) {
 // exercice 6 : Dans la variable average, calculer la moyenne de toutes les notes des tableaux
 // imbriqués dans "grades" en les parcourant avec des boucles puis afficher la variable "average".
 
+// let grades = [
+//   [20, 10],
+//   [15, 20],
+//   [13, 18],
+// ];
+
+// let average = 0;
+
+// // là on parcourt le tableau, chaque itétartion correspond à un sous-tableau
+// for (let i = 0; i < grades.length; i++) {
+//   let sumSubArray = 0;
+
+//   // là je parcours les sous-tableaux
+//   for (let j = 0; j < grades[i].length; j++) {
+//     sumSubArray += grades[i][j];
+//   }
+
+//   // verifications intermédiaires
+//   console.log("la taille pour chaque sous-tableau", grades[i].length);
+//   console.log("la somme pour chaque sous-tableau", sumSubArray);
+
+//   let averageSubArray = sumSubArray / grades[i].length;
+//   console.log("la moyenne pour chaque sous-tableau", averageSubArray);
+//   average += averageSubArray;
+// }
+
+// average = average / grades.length;
+
+// console.log("la moyenne totale", average);
+
 let grades = [
   [20, 10],
   [15, 20],
   [13, 18],
 ];
 
-let average = 0;
+let sumArray = 0;
+let numberOfGrades = 0;
 
-// là on parcourt le tableau, chaque itétartion correspond à un sous-tableau
 for (let i = 0; i < grades.length; i++) {
-  let sumSubArray = 0;
-
-  // là je parcours les sous-tableaux
   for (let j = 0; j < grades[i].length; j++) {
-    sumSubArray += grades[i][j];
+    sumArray = sumArray + grades[i][j];
+    console.log("sumarrayy", sumArray);
+    numberOfGrades = numberOfGrades + 1;
+    console.log("numberOfgrades", numberOfGrades);
   }
-
-  // verifications intermédiaires
-  console.log("la taille pour chaque sous-tableau", grades[i].length);
-  console.log("la somme pour chaque sous-tableau", sumSubArray);
-
-  let averageSubArray = sumSubArray / grades[i].length;
-  console.log("la moyenne pour chaque sous-tableau", averageSubArray);
-  average += averageSubArray;
 }
 
-average = average / grades.length;
+let average = sumArray / numberOfGrades;
 
-console.log("la moyenne totale", average);
+console.log("la moyenne", average);

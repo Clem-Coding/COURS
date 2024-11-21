@@ -8,9 +8,15 @@ let numbers = [
   -23, 42, 21, 90, 54, 362, -12, 57, 78, 84, 35, 546, 128, 7, 15, 65, 28,
 ];
 
-for (let i = 0; i < numbers.length; i++) {
-  //////
+let sortArray = [];
+
+for (let i = numbers.length - 1; i > 0; i--) {
+ for (let j=0; i < i-1; j++) {
+if numbers[j+1] < number[]
+ }
 }
+
+console.log(sortArray);
 
 // pseudo code, source wikipedia "tri à bulles" :
 // tri_à_bulles(Tableau T)
