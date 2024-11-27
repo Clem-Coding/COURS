@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vérification des mots de passe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+  </head>
+  <body>
+    <header>
+      <h1>Configurateur d'article</h1>
+    </header>
+    <main>
+      <form>
+        <p>Les mots de passe doivent correspondre</p>
+        <fieldset>
+          <label for="password">Mot de passe</label>
+          <div class="password-input-container">
+          <input type="password" id="password" />
+          <i class="bi bi-eye-slash" id="toggleConfirmPassword" data-target="password"></i>
+        </div>
+        </fieldset>
+        <fieldset>
+          <label for="confirmPassword">Confirmation du mot de passe</label>
+          <div class="password-input-container">
+            <input type="password" id="confirmPassword" />
+            <i class="bi bi-eye-slash" id="toggleConfirmPassword" data-target="confirmPassword"></i>
+          </div>
+        </fieldset>
+        <fieldset>
+          <button type="submit">Valider</button>
+        </fieldset>
+      </form>
+    </main>
+    <script type="application/javascript" src="index.js"></script>
+  </body>
+</html>
