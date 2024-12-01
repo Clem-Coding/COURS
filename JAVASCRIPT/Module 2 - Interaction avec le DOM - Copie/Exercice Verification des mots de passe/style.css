@@ -83,7 +83,7 @@ body > main > form fieldset:not(:last-of-type) {
   grid-template-rows: 0.5fr 1fr;
 }
 
-body > main > form fieldset:last-of-type {
+body > main > form fieldset:nth-of-type(3) {
   padding: 1rem 0;
   display: grid;
   grid-template-columns: 20% 60% 20%;
@@ -112,7 +112,7 @@ body > main > form input.invalid {
   border: 1px solid var(--pink);
 }
 
-/* Bonus perso : Eye Icon */
+/* BONUS PERSO */
 .password-input-container {
   position: relative;
   background-color: #c62e65;
@@ -124,4 +124,12 @@ body > main > form input.invalid {
   right: 0%;
   transform: translateY(-50%);
   cursor: pointer;
+}
+
+.wrapper-password-meter > ul > li.valid {
+  color: var(--green);
+}
+
+.wrapper-password-meter > ul > li.invalid {
+  color: inherit;
 }

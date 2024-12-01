@@ -1,36 +1,39 @@
 // Lien vers les consignes : https://kornog-dev.github.io/BRE03/js/dom-practice/consignes/ex-5/
 
-let passwordInput = document.getElementById("password");
-let confirmPasswordInput = document.getElementById("confirmPassword");
-let form = document.querySelector("main >form");
-let passwordMatchMessage = document.querySelector("main > form> p");
-console.log(passwordMatchMessage);
+const passwordInput = document.getElementById("password");
+const confirmPasswordInput = document.getElementById("confirmPassword");
+const form = document.querySelector("main >form");
+const passwordMatchMessage = document.querySelector("main > form> p");
 
-document.addEventListener("DOMContentLoaded", function () {
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
+/************************************************************/
+/*                      FUNCTIONS                           */
+/************************************************************/
 
-    if (passwordInput.value === confirmPasswordInput.value) {
-      console.log("c'est pareil");
-      passwordInput.classList.toggle("valid");
-      confirmPasswordInput.classList.toggle("valid");
-    } else {
-      passwordInput.classList.toggle("invalid");
-      confirmPasswordInput.classList.toggle("invalid");
-      passwordMatchMessage.classList.toggle("show");
-    }
-  });
+function validatePasswordMatch() {
+  passwordMatchMessage.classList.remove("show");
+  passwordInput.classList.remove("valid", "invalid");
+  confirmPasswordInput.classList.remove("valid", "invalid");
 
-  // Bonus perso : gestion icone oeil et visibilité du mot de passe
+  if (passwordInput.value === confirmPasswordInput.value) {
+    passwordInput.classList.add("valid");
+    confirmPasswordInput.classList.add("valid");
+  } else {
+    passwordInput.classList.add("invalid");
+    confirmPasswordInput.classList.add("invalid");
+    passwordMatchMessage.classList.add("show");
+  }
+}
 
-  let eyeIcons = document.querySelectorAll("#toggleConfirmPassword");
-  console.log(eyeIcons);
+// BONUS PERSO#1 :  visibilité du mot de passe
 
+let eyeIcons = document.querySelectorAll("#toggleConfirmPassword");
+
+function togglePasswordVisibility() {
   eyeIcons.forEach((icon) => {
     icon.addEventListener("click", (event) => {
-      let eyeIconButton = event.target;
-      let targetId = eyeIconButton.getAttribute("data-target");
-      let targetInput = document.getElementById(targetId);
+      const eyeIconButton = event.target;
+      const targetId = eyeIconButton.getAttribute("data-target");
+      const targetInput = document.getElementById(targetId);
 
       if (targetInput.type === "password") {
         targetInput.type = "text";
@@ -40,5 +43,82 @@ document.addEventListener("DOMContentLoaded", function () {
         eyeIconButton.classList.replace("bi-eye", "bi-eye-slash");
       }
     });
+  });
+}
+
+// BONUS PERSO#2 :  Gestion sécurité du mot de passe
+
+const lengthInfo = document.querySelector(".length");
+const lowerCase = document.querySelector(".lowercase");
+const upperCase = document.querySelector(".uppercase");
+const specialCharacter = document.querySelector(".special");
+const number = document.querySelector(".number");
+
+function evaluatePassword() {
+  const pwd = passwordInput.value;
+
+  if (pwd.length >= 8) {
+    lengthInfo.classList.remove("invalid");
+    lengthInfo.classList.add("valid");
+  } else {
+    lengthInfo.classList.remove("valid");
+    lengthInfo.classList.add("invalid");
+  }
+  if (/[a-z]/.test(pwd)) {
+    lowerCase.classList.remove("invalid");
+    lowerCase.classList.add("valid");
+  } else {
+    lowerCase.classList.remove("valid");
+    lowerCase.classList.add("invalid");
+  }
+
+  if (/[A-Z]/.test(pwd)) {
+    upperCase.classList.remove("invalid");
+    upperCase.classList.add("valid");
+  } else {
+    upperCase.classList.remove("valid");
+    upperCase.classList.add("invalid");
+  }
+
+  if (/[0-9]/.test(pwd)) {
+    number.classList.remove("invalid");
+    number.classList.add("valid");
+  } else {
+    number.classList.remove("valid");
+    number.classList.add("invalid");
+  }
+
+  if (/[0-9]/.test(pwd)) {
+    number.classList.remove("invalid");
+    number.classList.add("valid");
+  } else {
+    number.classList.remove("valid");
+    number.classList.add("invalid");
+  }
+
+  if (/[[@$!%*?&]/.test(pwd)) {
+    specialCharacter.classList.remove("invalid");
+    specialCharacter.classList.add("valid");
+  } else {
+    specialCharacter.classList.remove("valid");
+    specialCharacter.classList.add("invalid");
+  }
+}
+
+/************************************************************/
+/*                      Main Programm                       */
+/************************************************************/
+
+document.addEventListener("DOMContentLoaded", function () {
+  togglePasswordVisibility();
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    validatePasswordMatch();
+  });
+
+  passwordInput.addEventListener("input", (event) => {
+    event.preventDefault();
+    evaluatePassword();
   });
 });
