@@ -42,7 +42,7 @@ async function displayUsers() {
 
 displayUsers();
 
-// ALTERNATIVE
+// ALTERNATIVE;
 
 // let tbody = document.querySelector("tbody");
 
