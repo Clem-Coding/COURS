@@ -1,0 +1,119 @@
+// ** VARIABLES ** //
+$font-size-base: 62.5%;
+$font-size-body: 1.8rem;
+$line-height-body: 1.5;
+$color-text: #444;
+
+// ** CONTAINER ** //
+$container-width: 980px;
+
+// ** Position spaces ** //
+$float-margin: 1rem;
+$left-margin: 1rem;
+$right-margin: 1rem;
+
+// *****************************************************
+// FONTS
+// *****************************************************
+
+@font-face {
+  font-family: "courgetteregular";
+  src: url("./assets.fonts/courgette-regular-webfont.woff2") format("woff2"),
+    url("./assets/fonts/courgette-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./assets/fonts/source-sans-pro-v21-latin-regular.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("./assets/fonts/source-sans-pro-v21-latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("./assets/fonts/source-sans-pro-v21-latin-regular.woff2")
+      format("woff2"),
+    url("./assets/fonts/source-sans-pro-v21-latin-regular.woff") format("woff"),
+    url("./assets/fonts/source-sans-pro-v21-latin-regular.ttf")
+      format("truetype"),
+    url("./assets/fonts/source-sans-pro-v21-latin-regular.svg#SourceSansPro")
+      format("svg");
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: italic;
+  font-weight: 400;
+  src: url("./assets/fonts/source-sans-pro-v21-latin-italic.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("./assets/fonts/source-sans-pro-v21-latin-italic.eot?#iefix")
+      format("embedded-opentype"),
+    url("./assets/fonts/source-sans-pro-v21-latin-italic.woff2") format("woff2"),
+    url("./assets/fonts/source-sans-pro-v21-latin-italic.woff") format("woff"),
+    url("./assets/fonts/source-sans-pro-v21-latin-italic.ttf")
+      format("truetype"),
+    url("./assets/fonts/source-sans-pro-v21-latin-italic.svg#SourceSansPro")
+      format("svg");
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./assets/fonts/source-sans-pro-v21-latin-600.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("./assets/fonts/source-sans-pro-v21-latin-600.eot?#iefix")
+      format("embedded-opentype"),
+    url("./assets/fonts/source-sans-pro-v21-latin-600.woff2") format("woff2"),
+    url("./assets/fonts/source-sans-pro-v21-latin-600.woff") format("woff"),
+    url("./assets/fonts/source-sans-pro-v21-latin-600.ttf") format("truetype"),
+    url("./assets/fonts/source-sans-pro-v21-latin-600.svg#SourceSansPro")
+      format("svg");
+}
+
+// *****************************************************
+// GENERAL
+// *****************************************************
+
+html {
+  font-size: $font-size-base;
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  color: $color-text;
+  font-size: $font-size-body;
+  line-height: $line-height-body;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: $container-width;
+  margin: auto;
+}
+
+h1,
+h2,
+h3,
+nav,
+blockquote {
+  font-family: "courgetteregular";
+}
+
+.clear {
+  clear: both;
+}
+
+.right {
+  float: right;
+  margin-left: $float-margin;
+}
+
+.left {
+  float: left;
+  margin-right: $float-margin;
+}

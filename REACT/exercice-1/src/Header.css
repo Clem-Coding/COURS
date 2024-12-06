@@ -1,0 +1,21 @@
+.header {
+  background-color: pink;
+  padding: 5em;
+  text-align: center;
+}
+
+.menu {
+  list-style: none;
+  cursor: pointer;
+}
+
+.menu > li {
+  background-color: blueviolet;
+  margin: 0.5em;
+  padding: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.menu > li:hover {
+  background-color: #6a0dad;
+}
