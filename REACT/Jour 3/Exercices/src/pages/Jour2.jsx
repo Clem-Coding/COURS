@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import HomeButton from "../components/HomeButton";
 import Number from "../components/Number";
 import Students from "../components/Students";
 import Messages from "../components/Messages";
@@ -43,15 +44,25 @@ export default function Jour2() {
 
   return (
     <div>
-      <button onClick={() => navigate("/")}>Home</button>
+      <HomeButton />
       <h1>Exercice 1 - Puissance 3</h1>
       {numbers.map((number, index) => (
         <Number key={index} number={number} />
       ))}
       <h1>Exerice 2 - Students</h1>
-      {studentsList.map((student, index) => (
-        <Students key={index} name={student.name} notes={student.notes} />
-      ))}
+      <table className="students-table">
+        <thead>
+          <tr>
+            <th>Elève</th>
+            <th>Moyenne</th>
+          </tr>
+        </thead>
+        <tbody>
+          {studentsList.map((student, index) => (
+            <Students key={index} name={student.name} notes={student.notes} />
+          ))}
+        </tbody>
+      </table>
       <h1>Exercice 3 -Messages</h1>
       {messagesList.map((item, index) => (
         <Messages key={index} message={item} />

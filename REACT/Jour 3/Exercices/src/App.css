@@ -50,3 +50,65 @@ h1 {
   display: flex;
   gap: 2em;
 }
+
+.diaporama-container {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+}
+
+.diaporama-container > button {
+  height: 40px;
+}
+
+.home-button {
+  width: 20px;
+  color: white;
+}
+
+ul {
+  text-align: left;
+}
+
+.students-table {
+  border-collapse: collapse;
+  margin: auto;
+}
+
+.students-table td,
+.students-table th {
+  border: 1px solid white;
+  padding: 0.5em;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 2em;
+  background-color: #4a5568;
+  border-radius: 5px;
+  width: 30em;
+}
+
+.form-icon {
+  width: 10em;
+}
+
+.form-header {
+  padding: 3em;
+}
+
+.form-footer {
+  padding: 3em;
+}
+
+.fabrands {
+  color: white;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
