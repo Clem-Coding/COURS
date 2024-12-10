@@ -1,12 +1,14 @@
 import React from "react";
-import Number from "./Number";
-import Students from "./Students";
-import Messages from "./Messages";
-import Fruits from "./Fruits";
-import Clock from "./Clock";
-import Diaporama from "./Diaporama";
+import { useNavigate } from "react-router-dom";
+import Number from "../components/Number";
+import Students from "../components/Students";
+import Messages from "../components/Messages";
+import Fruits from "../components/Fruits";
+import Clock from "../components/Clock";
+import Diaporama from "../components/Diaporama";
 
-export default function wrapper() {
+export default function Jour2() {
+  const navigate = useNavigate();
   const numbers = [4, 3, 7];
   const studentsList = [
     { notes: [12, 11, 10], name: "Alan" },
@@ -41,6 +43,7 @@ export default function wrapper() {
 
   return (
     <div>
+      <button onClick={() => navigate("/")}>Home</button>
       <h1>Exercice 1 - Puissance 3</h1>
       {numbers.map((number, index) => (
         <Number key={index} number={number} />

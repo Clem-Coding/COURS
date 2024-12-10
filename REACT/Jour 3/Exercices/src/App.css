@@ -45,3 +45,8 @@ h1 {
   font-size: 2rem;
   color: #80d8ff;
 }
+
+.buttons-wrapper {
+  display: flex;
+  gap: 2em;
+}
