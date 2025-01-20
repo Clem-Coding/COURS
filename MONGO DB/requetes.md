@@ -94,6 +94,8 @@ db.restaurants.find(
 
 // Combien y a t il de restaurants qui font de la cuisine italienne et qui ont eu un score de 10 au moins ?
 
+db.restaurants.find({cuisine:"Italian", "grades.score":{$gte: 10}}).count();
+
 // Affichez également le nom, les scores et les coordonnées GPS de ces restaurants. Ordonnez les résultats par ordre décroissant sur les noms des restaurants.
 
 // 💡Remarque pour la dernière partie de la question utilisez la méthode sort :
@@ -101,12 +103,7 @@ db.restaurants.find(
 db.collection.find(query, restriction).sort({ key: 1 }); // 1 pour ordre croissant et -1 pour décroissant
 
 //Solution : (pb à résoudre)
-db.restaurants
-  .find(
-    { cuisine: "Italian", "grades.score": { $gte: 10 } },
-    { _id: 0, "grades.grade": 1, "address.coord": 1 }
-  )
-  .sort({ name: -1 });
+db.restaurants .find( { cuisine: "Italian", "grades.score": { $gte: 10 } }, { _id: 0, name:1, "grades.score": 1, "address.coord": 1 } ) .sort({ name: -1 });
 
 // Exercice 2
 // Quels sont les restaurants qui ont eu un grade A et un score supérieur ou égal à 20 ?
@@ -227,17 +224,60 @@ db.restaurants.find({borough :"Queens", "grades.grade": {$in : ["A","B"]}, "grad
 
 
 
-// Sélectionne tous les restaurants situés dans le Bronx et dont le nom commence par la lettre "P" ou "p". 
-// Affiche uniquement le nom et l'adresse (coordonnées GPS).
+// Sélectionne tous les restaurants situés dans le Queens et dont le nom commence par la lettre "B". 
+// Affiche uniquement le nom et leur nom de rue.
 
-db.restaurants.find({borough : "Bronx", name : {$regex : /^B/i }}, {_id:0, name : 1, "address.coords" : 1});
+db.restaurants.find({borough : "Queens", name : {$regex : /^B/ }}, {_id:0, name : 1, "address.street" : 1});
 
 
 
-// rouver tous les restaurants dans le borough de "Manhattan" où le grade est "A" ou "B", et le score de la dernière inspection 
+// Trouver tous les restaurants dans le borough de "Manhattan" où le grade est "A" ou "B", et le score de la dernière inspection 
 // (le premier élément dans le tableau grades) est supérieur ou égal à 15, tout en affichant uniquement 
 // le nom et le score de cette dernière inspection. Trie les résultats par score décroissant.
 
 
 db.restaurants.find({borough:"Manhattan", "grades.grade" :{$in : ["A","B"]},"grades.0.score" : {$gte : 15} }, {_id:0, name: 1, "grades.0.score": 1}).sort({"grades.0.score": -1})
+
+
+// <!-- Exercice 18 (Camille)
+// Quels sont les restaurants dont le nom contient le mot pizza ? -->
+
+
+db.restaurants.find({ name: { $regex: /pizza/i } }, {_id:0,name:1})
+
+
+// Mince !!!! Vous êtes atteins d'hexakosioïhexekontahexaphobie (littéralement, « peur du nombre 666 » )
+// Trouver TOUS les restaurants qui ne contiennent pas le nombre 666 :
+// Dans le n° de batiment
+// Dans le Zipcode
+// Dans les coordonées
+
+db.restaurants.find({
+  "address.building": { $not: { $regex: /666/ } },
+  "address.zipcode": { $not: { $regex: /666/ } },
+  "address.street": { $not: { $regex: /666/ } }
+})
+
+
+
+
+
+// <!-- Exercice 22 🥖  (Joris)
+// Vous êtes Corentin le Chauvin !
+// Trouver les restaurants proposant de la cuisine française dans le quartier de Manhattan -->
+
+db.restaurants.find({cuisine:"French", borough: "Manhattan"}, {_id:0, name:1})
+
+
+// Exercice 23 🤡  (Joris)
+// Vous être Emile le Débile !
+// Trouver les restaurant proposant uniquement des donuts.
+//  Attention, le nom du restaurant ne doit en aucun cas contenir le nom "donut" !
+
+db.restaurants.find({cuisine:"Donuts", "address.building": { $not: { $regex: /donuts/ } }})
+
 ```
+
+
+
+db.restaurants.find( { name: { $regex: /\bchat\b/i } }, { _id: 0, name: 1, borough:1 } )
