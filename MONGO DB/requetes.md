@@ -274,10 +274,12 @@ db.restaurants.find({cuisine:"French", borough: "Manhattan"}, {_id:0, name:1})
 // Trouver les restaurant proposant uniquement des donuts.
 //  Attention, le nom du restaurant ne doit en aucun cas contenir le nom "donut" !
 
-db.restaurants.find({cuisine:"Donuts", "address.building": { $not: { $regex: /donuts/ } }})
+db.restaurants.find(
+  { cuisine: "Donuts", name: { $not: { $regex: /donut/i } } },{ _id: 0, name: 1 , cuisine : 1}
+)
+
 
 ```
 
 
 
-db.restaurants.find( { name: { $regex: /\bchat\b/i } }, { _id: 0, name: 1, borough:1 } )
